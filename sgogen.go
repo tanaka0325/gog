@@ -39,20 +39,16 @@ func (g *Generator) Gen() error {
 	}
 	for _, c := range strings.Split(r, "\n") {
 		if strings.HasPrefix(c, g.cmd) {
-			fmt.Printf("[execute command]%s\n", c)
+			fmt.Println(c)
 
 			if !g.isDryRun {
 				args := strings.Split(c, " ")
-				e, err := executeCmd(args[0], args[1:]...)
+				r, err := executeCmd(args[0], args[1:]...)
 				if err != nil {
 					return fmt.Errorf("failed to executeCmd: %w", err)
 				}
 
-				if e == "" {
-					fmt.Println("[executed]")
-				} else {
-					fmt.Printf("[results] %s", e)
-				}
+				fmt.Print(r)
 			}
 		}
 	}

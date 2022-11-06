@@ -73,7 +73,7 @@ func ExampleGenerator_Gen_dryrun() {
 
 	g.Gen()
 	// Output:
-	// [execute command]echo sample1
+	// echo sample1
 }
 
 func ExampleGenerator_Gen_executed_and_print_results() {
@@ -84,20 +84,8 @@ func ExampleGenerator_Gen_executed_and_print_results() {
 
 	g.Gen()
 	// Output:
-	// [execute command]echo sample1
-	// [results] sample1
-}
-
-func ExampleGenerator_Gen_executed_and_not_print_results() {
-	g := &Generator{
-		cmd:   "touch",
-		paths: []string{"docs/sample2.go"},
-	}
-
-	g.Gen()
-	// Output:
-	// [execute command]touch sample2.txt
-	// [executed]
+	// echo sample1
+	// sample1
 }
 
 func ExampleGenerator_Gen_executed_multi_files() {
@@ -108,8 +96,8 @@ func ExampleGenerator_Gen_executed_multi_files() {
 
 	g.Gen()
 	// Output:
-	// [execute command]echo sample1
-	// [results] sample1
-	// [execute command]echo sample2
-	// [results] sample2
+	// echo sample1
+	// sample1
+	// echo sample2
+	// sample2
 }
