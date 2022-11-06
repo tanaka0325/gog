@@ -1,4 +1,4 @@
-package sgogen
+package gog
 
 import (
 	"bytes"

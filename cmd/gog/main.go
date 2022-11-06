@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/tanaka0325/sgogen"
+	"github.com/tanaka0325/gog"
 )
 
 var (
@@ -22,7 +22,7 @@ func main() {
 	flag.Parse()
 	args := flag.Args()
 
-	g := sgogen.New(cmd, isDryRun, args)
+	g := gog.New(cmd, isDryRun, args)
 	if err := g.Gen(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)

@@ -1,4 +1,4 @@
-module github.com/tanaka0325/sgogen
+module github.com/tanaka0325/gog
 
 go 1.19
 
